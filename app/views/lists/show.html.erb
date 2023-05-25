@@ -1,0 +1,11 @@
+
+<div class="container mt-5">
+  <h1><%= @list.name %></h1>
+  <p><%= link_to "Back to Lists", lists_path %></p>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.submit %>
+<% end %>
+
+</div>
