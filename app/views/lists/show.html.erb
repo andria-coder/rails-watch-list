@@ -3,9 +3,15 @@
   <h1><%= @list.name %></h1>
   <p><%= link_to "Back to Lists", lists_path %></p>
 
+<h3>Create Bookmark:</h3>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment %>
   <%= f.submit %>
 <% end %>
+
+<ul><% @list.bookmarks.each do |bookmark| %>
+    <li><%= link_to bookmark.comment, list_path(list) %></li>
+  <% end %></ul>
+
 
 </div>
